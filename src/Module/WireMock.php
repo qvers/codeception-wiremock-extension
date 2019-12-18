@@ -70,4 +70,13 @@ class WireMock extends CodeceptionModule
     {
         $this->wireMock->verify($builderOrCount, $builder);
     }
+
+    /**
+     * @param RequestPatternBuilder $builder
+     * @return \WireMock\Client\LoggedRequest[]
+     */
+    public function findReceivedRequestsToWireMock(RequestPatternBuilder $builder)
+    {
+        return $this->wireMock->findAll($builder);
+    }
 }
