@@ -48,6 +48,9 @@ class WireMock extends CodeceptionModule
         $this->wireMock = WireMockClient::create($this->config['host'], $this->config['port']);
     }
 
+    /**
+     * @deprecated use resetMappingsAndRequestJournalInWireMock() instead
+     */
     public function cleanAllPreviousRequestsToWireMock()
     {
         $this->wireMock->reset();
@@ -77,5 +80,10 @@ class WireMock extends CodeceptionModule
     public function findReceivedRequestsToWireMock(RequestPatternBuilder $builder)
     {
         return $this->wireMock->findAll($builder);
+    }
+
+    public function resetMappingsAndRequestJournalInWireMock()
+    {
+        $this->wireMock->reset();
     }
 }
