@@ -86,4 +86,9 @@ class WireMock extends CodeceptionModule
     {
         $this->wireMock->reset();
     }
+
+    public function resetRequestJournalInWireMock()
+    {
+        $this->wireMock->resetAllRequests();
+    }
 }
