@@ -91,4 +91,9 @@ class WireMock extends CodeceptionModule
     {
         $this->wireMock->resetAllRequests();
     }
+
+    public function resetMappingsInWireMock()
+    {
+        $this->wireMock->resetToDefault();
+    }
 }
