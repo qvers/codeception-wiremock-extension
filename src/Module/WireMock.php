@@ -18,7 +18,6 @@
 namespace Codeception\Module;
 
 use Codeception\Module as CodeceptionModule;
-use Codeception\TestCase;
 use Codeception\Util\Debug;
 use WireMock\Client\WireMock as WireMockClient;
 use WireMock\Client\MappingBuilder;
