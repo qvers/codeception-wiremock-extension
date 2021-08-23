@@ -18,7 +18,6 @@
 namespace Codeception\Module;
 
 use Codeception\Module as CodeceptionModule;
-use Codeception\TestCase;
 use Codeception\Util\Debug;
 use WireMock\Client\WireMock as WireMockClient;
 use WireMock\Client\MappingBuilder;
@@ -49,6 +48,9 @@ class WireMock extends CodeceptionModule
         $this->wireMock = WireMockClient::create($this->config['host'], $this->config['port']);
     }
 
+    /**
+     * @deprecated use resetMappingsAndRequestJournalInWireMock() instead
+     */
     public function cleanAllPreviousRequestsToWireMock()
     {
         $this->wireMock->reset();
@@ -78,5 +80,20 @@ class WireMock extends CodeceptionModule
     public function findReceivedRequestsToWireMock(RequestPatternBuilder $builder)
     {
         return $this->wireMock->findAll($builder);
+    }
+
+    public function resetMappingsAndRequestJournalInWireMock()
+    {
+        $this->wireMock->reset();
+    }
+
+    public function resetRequestJournalInWireMock()
+    {
+        $this->wireMock->resetAllRequests();
+    }
+
+    public function resetMappingsInWireMock()
+    {
+        $this->wireMock->resetToDefault();
     }
 }
