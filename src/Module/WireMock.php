@@ -30,7 +30,7 @@ class WireMock extends CodeceptionModule
      */
     private $wireMock;
 
-    protected $config = [
+    protected array $config = [
         'host' => 'localhost',
         'port' => '8080'
     ];
@@ -39,7 +39,7 @@ class WireMock extends CodeceptionModule
      * {@inheritDoc}
      * @see \Codeception\Module::_beforeSuite()
      */
-    public function _beforeSuite($settings = [])
+    public function _beforeSuite(array $settings = [])
     {
         $this->config = array_merge($this->config, $settings);
         Debug::debug(

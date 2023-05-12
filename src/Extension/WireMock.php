@@ -17,7 +17,7 @@
  */
 namespace Codeception\Extension;
 
-use Codeception\Platform\Extension as CodeceptionExtension;
+use Codeception\Extension as CodeceptionExtension;
 use WireMock\Client\WireMock as WireMockClient;
 
 /**

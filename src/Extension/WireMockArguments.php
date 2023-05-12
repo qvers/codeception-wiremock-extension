@@ -68,7 +68,7 @@ class WireMockArguments
      */
     public function __construct()
     {
-        $this->defaults['logs-path'] = Config::logDir();
+        $this->defaults['logs-path'] = Config::outputDir();
     }
 
     /**
